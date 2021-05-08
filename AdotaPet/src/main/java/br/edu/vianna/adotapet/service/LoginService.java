@@ -12,6 +12,10 @@ package br.edu.vianna.adotapet.service;
 public class LoginService {
     
     public static boolean PodeLogar(String login, String senha) {
+        tentativas++;
+        if (tentativas >= 3) System.exit(0);
         return login.equals("admin") && senha.equals("123");
     }
+    
+    private static int tentativas;
 }

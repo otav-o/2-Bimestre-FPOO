@@ -112,7 +112,7 @@ public class LoginView extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                // TODO para a próxima aula: fechar o sistema após 3 tentativas incorretas de login
+        // TODO para a próxima aula: fechar o sistema após 3 tentativas incorretas de login
         
         //if (jtfLogin.getText().equals("admin") && jpfSenha.getText().equals("123")){; 
         // regra da aplicação não pode ficar na view
