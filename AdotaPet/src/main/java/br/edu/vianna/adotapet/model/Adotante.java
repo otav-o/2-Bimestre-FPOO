@@ -6,6 +6,8 @@
 package br.edu.vianna.adotapet.model;
 
 import br.edu.vianna.adotapet.model.pets.Animal;
+import br.edu.vianna.adotapet.model.endereco.Endereco;
+
 import java.util.ArrayList;
 
 /**

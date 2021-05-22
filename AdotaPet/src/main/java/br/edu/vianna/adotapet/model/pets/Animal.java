@@ -13,6 +13,7 @@ import java.time.LocalDate;
  * @author otavi
  */
 public class Animal {
+    private int id;
     private String nome;
     private LocalDate dataNascimento;
     private ESexo sexo;
