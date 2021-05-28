@@ -5,7 +5,12 @@
  */
 package br.edu.vianna.adotapet.view;
 
+import br.edu.vianna.adotapet.banco.util.ConnectionFactory;
 import br.edu.vianna.adotapet.service.LoginService;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,6 +118,14 @@ public class LoginView extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                 
+        try {
+            Connection c = ConnectionFactory.getConnection();
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Driver do banco de dados não encontrado.");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Erro de conexão ao banco!");
+        }
+        
         //if (jtfLogin.getText().equals("admin") && jpfSenha.getText().equals("123")){; 
         // regra da aplicação não pode ficar na view
         if (LoginService.PodeLogar(jtfLogin.getText(), jpfSenha.getText())){
