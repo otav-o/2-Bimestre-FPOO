@@ -9,6 +9,7 @@ import br.edu.vianna.adotapet.banco.util.ConnectionFactory;
 import br.edu.vianna.adotapet.dao.DaoGenerics;
 import br.edu.vianna.adotapet.model.Usuario;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
@@ -33,12 +34,15 @@ public class UsuarioDao implements DaoGenerics{
         String sql = "INSERT INTO "
                 + "pessoa (nome, email, data_nascimento) "
                 + "VALUES (?, ?, ?);"; // cuidado com os espaços
+        
         PreparedStatement pst = c.prepareStatement(sql);
         
         // 3° Trocar valores
         pst.setString(1, p.getSenha());
         pst.setString(2, p.getEmail());
+        pst.setString(3, p.getDataNascimento().toString());
         
         // 4° Executar
+        pst.executeUpdate();
     }   
 }
