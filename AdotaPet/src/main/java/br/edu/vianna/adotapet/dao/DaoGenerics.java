@@ -6,11 +6,24 @@
 package br.edu.vianna.adotapet.dao;
 
 import br.edu.vianna.adotapet.model.Usuario;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
  * @author otavi
  */
-public interface DaoGenerics {
-    public void inserir(Usuario p);
+public interface DaoGenerics<C, K> {
+    public void inserir(C c) throws ClassNotFoundException, SQLException;
+    public void alterar(C c) throws ClassNotFoundException, SQLException;
+    
+    public void apagar(K key) throws ClassNotFoundException, SQLException;
+    
+    public C buscar(K key) throws ClassNotFoundException, SQLException;
+    
+    public ArrayList<C> buscarTodos() throws ClassNotFoundException, SQLException;
+    
+    public long quantidade() throws ClassNotFoundException, SQLException;
+
+
 }
