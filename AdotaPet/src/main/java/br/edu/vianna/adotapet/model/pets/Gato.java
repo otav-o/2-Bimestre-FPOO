@@ -15,14 +15,16 @@ import java.time.LocalDate;
 public class Gato extends Animal {
     private String cor;
     private boolean domesticado;
+    private String raca;
 
     public Gato() {
     }
 
-    public Gato(String cor, boolean domesticado, int id, String nome, LocalDate dataNascimento, ESexo sexo) {
+    public Gato(String cor, boolean domesticado, int id, String nome, LocalDate dataNascimento, ESexo sexo, String raca) {
         super(id, nome, dataNascimento, sexo);
         this.cor = cor;
         this.domesticado = domesticado;
+        this.raca = raca;
     }
 
     public String getCor() {
@@ -39,5 +41,9 @@ public class Gato extends Animal {
 
     public void setDomesticado(boolean domesticado) {
         this.domesticado = domesticado;
+    }
+    
+    public String getRaca() {
+        return raca;
     }
 }

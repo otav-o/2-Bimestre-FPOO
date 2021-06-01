@@ -9,6 +9,7 @@ import br.edu.vianna.adotapet.banco.util.ConnectionFactory;
 import br.edu.vianna.adotapet.dao.imp.UsuarioDao;
 import br.edu.vianna.adotapet.model.Usuario;
 import br.edu.vianna.adotapet.model.enm.ETipoUsuario;
+import br.edu.vianna.adotapet.model.pets.Gato;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -24,6 +25,8 @@ public class TestaBanco {
     
         Usuario u = new Usuario("Zé", "123", ETipoUsuario.ADMIN,  
                 "Zezin da Silva", "ze@ze", LocalDate.now().minusYears(15));
+        
+        Gato g = new Gato("cinza", )
     
         try { // salvar no banco de dados
             new UsuarioDao().inserir(u);
